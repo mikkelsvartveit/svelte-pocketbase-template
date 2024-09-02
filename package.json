@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
+    "dev:sveltekit": "vite dev",
+    "dev:pocketbase": "cd pocketbase && ./pocketbase serve",
+    "dev": "pnpm run '/^dev:.*/'",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
