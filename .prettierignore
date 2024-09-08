@@ -2,3 +2,6 @@
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# pocketbase-typegen
+src/lib/pocketbase-typegen.ts

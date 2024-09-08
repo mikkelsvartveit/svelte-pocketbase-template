@@ -1,5 +1,5 @@
 import PocketBase from "pocketbase";
-import type { TypedPocketBase } from "./pocketbase-types";
+import type { TypedPocketBase } from "./pocketbase-typegen";
 
 interface PocketBaseErrorData {
   [key: string]: {
