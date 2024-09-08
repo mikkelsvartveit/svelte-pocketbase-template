@@ -1,38 +1,48 @@
-# create-svelte
+# Svelte + PocketBase template app
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is a starter project for building web applications with [Svelte](https://svelte.dev) and [PocketBase](https://pocketbase.io).
 
-## Creating a project
+The project comes with the following libraries and tools preconfigured:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [TypeScript](https://www.typescriptlang.org)
+- [SvelteKit](https://kit.svelte.dev) (in SPA mode)
+- [PocketBase](https://pocketbase.io) as a backend
+- [pocketbase-typegen](https://github.com/patmood/pocketbase-typegen) for automatic type generation
+- [Tailwind CSS](https://tailwindcss.com)
+- [DaisyUI](https://daisyui.com) (pre-built Tailwind CSS components)
+- [Prettier](https://prettier.io)
+- [ESLint](https://eslint.org)
+- [Docker](https://www.docker.com) (for easy deployment)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Getting started
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+1. Clone the repository
 
-## Developing
+   ```bash
+   git clone https://github.com/mikkelsvartveit/svelte-pocketbase-template.git
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. Install dependencies:
 
-```bash
-npm run dev
+   ```bash
+   npm install -g pnpm
+   pnpm install
+   ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+3. Download the [PocketBase binary](https://pocketbase.io/docs/) and save it as `./pocketbase/pocketbase`.
 
-## Building
+4. Run PocketBase and the SvelteKit development server:
 
-To create a production version of your app:
+   ```bash
+   pnpm run dev
+   ```
 
-```bash
-npm run build
-```
+You can now access the app at `http://localhost:5173` and the PocketBase admin panel at `http://localhost:8090/_`.
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The project comes with a Dockerfile, which can be used to build and deploy the app on any platform (I personally use [Railway](https://railway.app)).
+
+The Dockerfile builds the SvelteKit app, and then copies the build files to `/pb/pb_public` in order to serve it through PocketBase.
+
+Make sure to mount a volume to the `/pb/pb_data` directory to persist PocketBase data.
