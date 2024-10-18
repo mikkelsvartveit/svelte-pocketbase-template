@@ -21,8 +21,6 @@
       } catch (error) {
         if (error instanceof Error && "originalError" in error) {
           pocketbaseError = error.originalError as PocketBaseError;
-
-          console.log(error.originalError);
         }
       }
     }
