@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-static";
+import adapter from "@sveltejs/adapter-node";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,9 +9,7 @@ const config = {
 
   kit: {
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
-    adapter: adapter({
-      fallback: "index.html",
-    }),
+    adapter: adapter(),
     experimental: {
       remoteFunctions: true,
     },
