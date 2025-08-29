@@ -11,7 +11,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   try {
     // get an up-to-date auth store state by verifying and refreshing the loaded auth model (if any)
-    if (!event.locals.serverPb.authStore.isValid) {
+    if (event.locals.serverPb.authStore.isValid) {
       await event.locals.serverPb.collection("users").authRefresh();
     }
   } catch {
