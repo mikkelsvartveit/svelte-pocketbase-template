@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { pb } from "$lib/pocketbase";
+  import { clientPb } from "$lib/pocketbase";
   import type { PocketBaseError } from "$lib/pocketbase";
 
   let pocketbaseError = $state<PocketBaseError | null>(null);
@@ -15,7 +15,7 @@
 
     if (email && password) {
       try {
-        await pb.collection("users").authWithPassword(email, password);
+        await clientPb.collection("users").authWithPassword(email, password);
 
         goto("/");
       } catch (error) {

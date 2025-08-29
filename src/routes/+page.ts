@@ -1,8 +1,8 @@
-import { pb } from "$lib/pocketbase";
+import { clientPb } from "$lib/pocketbase";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = () => {
-  const user = pb?.authStore?.model;
+  const user = clientPb?.authStore?.record;
 
   return {
     user,

@@ -1,5 +1,6 @@
 import PocketBase from "pocketbase";
 import type { TypedPocketBase } from "./pocketbase-typegen";
+import { PUBLIC_POCKETBASE_URL } from "$env/static/public";
 
 interface PocketBaseErrorData {
   [key: string]: {
@@ -15,4 +16,6 @@ export interface PocketBaseError {
   url: string;
 }
 
-export const pb = new PocketBase("/") as TypedPocketBase;
+export const clientPb = new PocketBase(
+  PUBLIC_POCKETBASE_URL,
+) as TypedPocketBase;

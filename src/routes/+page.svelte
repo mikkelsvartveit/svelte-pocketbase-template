@@ -1,12 +1,12 @@
 <script lang="ts">
   import { invalidateAll } from "$app/navigation";
-  import { pb } from "$lib/pocketbase";
+  import { clientPb } from "$lib/pocketbase";
 
   let { data } = $props();
   const { user } = $derived(data);
 
   const logOut = async () => {
-    pb.authStore.clear();
+    clientPb.authStore.clear();
     await invalidateAll();
   };
 </script>
