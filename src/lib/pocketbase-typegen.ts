@@ -11,7 +11,6 @@ export enum Collections {
 	Mfas = "_mfas",
 	Otps = "_otps",
 	Superusers = "_superusers",
-	Images = "images",
 	Users = "users",
 }
 
@@ -91,26 +90,16 @@ export type SuperusersRecord = {
 	verified?: boolean
 }
 
-export type ImagesRecord = {
-	created?: IsoDateString
-	file?: string
-	id: string
-	owner?: RecordIdString
-	prompt?: string
-	updated?: IsoDateString
-}
-
 export type UsersRecord = {
 	avatar?: string
 	created?: IsoDateString
-	email?: string
+	email: string
 	emailVisibility?: boolean
 	id: string
 	name?: string
 	password: string
 	tokenKey: string
 	updated?: IsoDateString
-	username: string
 	verified?: boolean
 }
 
@@ -120,7 +109,6 @@ export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRec
 export type MfasResponse<Texpand = unknown> = Required<MfasRecord> & BaseSystemFields<Texpand>
 export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> & BaseSystemFields<Texpand>
 export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> & AuthSystemFields<Texpand>
-export type ImagesResponse<Texpand = unknown> = Required<ImagesRecord> & BaseSystemFields<Texpand>
 export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>
 
 // Types containing all Records and Responses, useful for creating typing helper functions
@@ -131,7 +119,6 @@ export type CollectionRecords = {
 	_mfas: MfasRecord
 	_otps: OtpsRecord
 	_superusers: SuperusersRecord
-	images: ImagesRecord
 	users: UsersRecord
 }
 
@@ -141,7 +128,6 @@ export type CollectionResponses = {
 	_mfas: MfasResponse
 	_otps: OtpsResponse
 	_superusers: SuperusersResponse
-	images: ImagesResponse
 	users: UsersResponse
 }
 
@@ -154,6 +140,5 @@ export type TypedPocketBase = PocketBase & {
 	collection(idOrName: '_mfas'): RecordService<MfasResponse>
 	collection(idOrName: '_otps'): RecordService<OtpsResponse>
 	collection(idOrName: '_superusers'): RecordService<SuperusersResponse>
-	collection(idOrName: 'images'): RecordService<ImagesResponse>
 	collection(idOrName: 'users'): RecordService<UsersResponse>
 }
