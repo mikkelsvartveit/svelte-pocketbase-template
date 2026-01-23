@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+  import { resolve } from "$app/paths";
   import { pb } from "$lib/pocketbase";
   import type { PocketBaseError } from "$lib/pocketbase";
   import { Button } from "$lib/components/ui/button";
@@ -19,7 +20,7 @@
       try {
         await pb.collection("users").authWithPassword(email, password);
 
-        goto("/");
+        goto(resolve("/"));
       } catch (error) {
         if (error instanceof Error && "originalError" in error) {
           pocketbaseError = error.originalError as PocketBaseError;
@@ -35,8 +36,9 @@
 
 <p class="pt-4">
   If you don't have an account, you can
-  <a href="/register" class="text-primary underline underline-offset-4"
-    >sign up</a
+  <a
+    href={resolve("/register")}
+    class="text-primary underline underline-offset-4">sign up</a
   >
   instead.
 </p>

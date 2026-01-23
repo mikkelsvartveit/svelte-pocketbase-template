@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+  import { resolve } from "$app/paths";
   import { pb } from "$lib/pocketbase";
   import type { PocketBaseError } from "$lib/pocketbase";
   import { Button } from "$lib/components/ui/button";
@@ -26,7 +27,7 @@
 
         await pb.collection("users").authWithPassword(email, password);
 
-        goto("/");
+        goto(resolve("/"));
       } catch (error) {
         if (error instanceof Error && "originalError" in error) {
           pocketbaseError = error.originalError as PocketBaseError;
@@ -40,7 +41,9 @@
 
 <p class="pt-4">
   If you already have an account, you can
-  <a href="/login" class="text-primary underline underline-offset-4">sign in</a>
+  <a href={resolve("/login")} class="text-primary underline underline-offset-4"
+    >sign in</a
+  >
   instead.
 </p>
 

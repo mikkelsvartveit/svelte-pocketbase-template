@@ -28,6 +28,13 @@ export default [
     },
   },
   {
-    ignores: ["build/", ".svelte-kit/", "dist/", "pocketbase/pb_data/"],
+    ignores: [
+      "build/",
+      ".svelte-kit/",
+      "dist/",
+      "pocketbase/pb_data/",
+      "src/lib/pocketbase-typegen.ts",
+      "src/lib/components/ui/**",
+    ],
   },
 ];
