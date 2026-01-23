@@ -11,6 +11,7 @@ export enum Collections {
 	Mfas = "_mfas",
 	Otps = "_otps",
 	Superusers = "_superusers",
+	Items = "items",
 	Subscriptions = "subscriptions",
 	Users = "users",
 }
@@ -93,6 +94,14 @@ export type SuperusersRecord = {
 	verified?: boolean
 }
 
+export type ItemsRecord = {
+	created: IsoAutoDateString
+	id: string
+	text?: string
+	updated: IsoAutoDateString
+	user?: RecordIdString
+}
+
 export type SubscriptionsRecord = {
 	created: IsoAutoDateString
 	id: string
@@ -120,6 +129,7 @@ export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRec
 export type MfasResponse<Texpand = unknown> = Required<MfasRecord> & BaseSystemFields<Texpand>
 export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> & BaseSystemFields<Texpand>
 export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> & AuthSystemFields<Texpand>
+export type ItemsResponse<Texpand = unknown> = Required<ItemsRecord> & BaseSystemFields<Texpand>
 export type SubscriptionsResponse<Texpand = unknown> = Required<SubscriptionsRecord> & BaseSystemFields<Texpand>
 export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>
 
@@ -131,6 +141,7 @@ export type CollectionRecords = {
 	_mfas: MfasRecord
 	_otps: OtpsRecord
 	_superusers: SuperusersRecord
+	items: ItemsRecord
 	subscriptions: SubscriptionsRecord
 	users: UsersRecord
 }
@@ -141,6 +152,7 @@ export type CollectionResponses = {
 	_mfas: MfasResponse
 	_otps: OtpsResponse
 	_superusers: SuperusersResponse
+	items: ItemsResponse
 	subscriptions: SubscriptionsResponse
 	users: UsersResponse
 }
