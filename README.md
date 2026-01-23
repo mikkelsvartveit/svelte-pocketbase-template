@@ -9,7 +9,7 @@ The project comes with the following libraries and tools preconfigured:
 - [PocketBase](https://pocketbase.io) as a backend
 - [pocketbase-typegen](https://github.com/patmood/pocketbase-typegen) for automatic type generation
 - [Tailwind CSS](https://tailwindcss.com)
-- [DaisyUI](https://daisyui.com) (pre-built Tailwind CSS components)
+- [shadcn-svelte](https://www.shadcn-svelte.com/) (UI component library)
 - [Prettier](https://prettier.io)
 - [ESLint](https://eslint.org)
 - [Docker](https://www.docker.com) (for easy deployment)
@@ -29,9 +29,7 @@ The project comes with the following libraries and tools preconfigured:
    pnpm install
    ```
 
-3. Download the [PocketBase binary](https://pocketbase.io/docs/) and save it as `./pocketbase/pocketbase`.
-
-4. Run PocketBase and the SvelteKit development server:
+3. Run PocketBase and the SvelteKit development server:
 
    ```bash
    pnpm run dev
