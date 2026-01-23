@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "node scripts/pocketbase-install.js",
+    "install:pocketbase": "node scripts/pocketbase-install.js",
     "dev:sveltekit": "pnpm run typegen && vite dev",
     "dev:pocketbase": "cd pocketbase && ./pocketbase serve",
     "dev": "pnpm run '/^dev:.*/'",

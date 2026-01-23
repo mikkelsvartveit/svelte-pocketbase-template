@@ -39,11 +39,6 @@ function getPlatformInfo() {
 }
 
 async function downloadPocketBase() {
-  if (existsSync(OUTPUT_PATH)) {
-    console.log("PocketBase binary already exists, skipping download.");
-    return;
-  }
-
   const { os, architecture } = getPlatformInfo();
   const url = `https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VERSION}/pocketbase_${POCKETBASE_VERSION}_${os}_${architecture}.zip`;
 

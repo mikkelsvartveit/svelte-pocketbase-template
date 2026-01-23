@@ -27,6 +27,7 @@ The project comes with the following libraries and tools preconfigured:
    ```bash
    npm install -g pnpm
    pnpm install
+   pnpm install:pocketbase
    ```
 
 3. Run PocketBase and the SvelteKit development server:
