@@ -22,4 +22,6 @@ vite.config.ts.timestamp-*
 
 # Pocketbase
 pocketbase/pocketbase
+pocketbase/CHANGELOG.md
+pocketbase/LICENSE.md
 pocketbase/pb_data/

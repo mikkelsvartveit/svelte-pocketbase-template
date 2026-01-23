@@ -3,5 +3,9 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
+# Pocketbase
+pocketbase/CHANGELOG.md
+pocketbase/LICENSE.md
+
 # pocketbase-typegen
 src/lib/pocketbase-typegen.ts

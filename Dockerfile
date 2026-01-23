@@ -14,7 +14,7 @@ RUN pnpm run build
 # Production image
 FROM alpine:latest
 
-ARG PB_VERSION=0.29.3
+ARG PB_VERSION=0.36.1
 
 RUN apk add --no-cache \
     wget \
