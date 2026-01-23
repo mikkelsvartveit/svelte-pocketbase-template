@@ -2,6 +2,8 @@
   import { goto } from "$app/navigation";
   import { pb } from "$lib/pocketbase";
   import type { PocketBaseError } from "$lib/pocketbase";
+  import { Button } from "$lib/components/ui/button";
+  import { Input } from "$lib/components/ui/input";
 
   let pocketbaseError = $state<PocketBaseError | null>(null);
 
@@ -38,17 +40,15 @@
 
 <p class="pt-4">
   If you already have an account, you can
-  <a href="/login" class="link link-primary">sign in</a>
+  <a href="/login" class="text-primary underline underline-offset-4">sign in</a>
   instead.
 </p>
 
-<form onsubmit={handleSubmit} class="flex flex-col items-start gap-2 py-6">
-  <input
-    type="email"
-    name="email"
-    placeholder="Email"
-    class="input input-bordered"
-  />
+<form
+  onsubmit={handleSubmit}
+  class="flex max-w-sm flex-col items-start gap-2 py-6"
+>
+  <Input type="email" name="email" placeholder="Email" />
 
   {#if pocketbaseError?.data?.email}
     <p class="mb-4 text-sm font-medium text-red-700">
@@ -56,23 +56,17 @@
     </p>
   {/if}
 
-  <input
-    type="password"
-    name="password"
-    placeholder="Password"
-    class="input input-bordered"
-  />
+  <Input type="password" name="password" placeholder="Password" />
   {#if pocketbaseError?.data?.password}
     <p class="mb-4 text-sm font-medium text-red-700">
       {pocketbaseError?.data?.password.message}
     </p>
   {/if}
 
-  <input
+  <Input
     type="password"
     name="passwordConfirm"
     placeholder="Confirm Password"
-    class="input input-bordered"
   />
   {#if pocketbaseError?.data?.passwordConfirm}
     <p class="mb-4 text-xs font-semibold text-red-700">
@@ -80,5 +74,5 @@
     </p>
   {/if}
 
-  <button type="submit" class="btn btn-primary">Sign up</button>
+  <Button type="submit">Sign up</Button>
 </form>
