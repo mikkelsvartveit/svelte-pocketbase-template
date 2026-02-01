@@ -1,0 +1,6 @@
+[build]
+  cmd = "go build"
+  bin = "./pocketbase"
+  args_bin = ["serve"]
+  include_ext = ["go"]
+  exclude_dir = ["pb_data"]
